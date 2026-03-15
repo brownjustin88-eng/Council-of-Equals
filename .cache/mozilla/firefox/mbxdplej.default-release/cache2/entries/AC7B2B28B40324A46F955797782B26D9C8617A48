@@ -1,0 +1,511 @@
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html class="h-full overflow-y-scroll">
+  <head>
+    <title>Download Ollama on Linux</title>
+
+    <meta charset="utf-8" />
+    <meta name="description" content="Download Ollama for Linux"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="Download Ollama on Linux" />
+    <meta property="og:description" content="Download Ollama for Linux" />
+    <meta property="og:url" content="https://ollama.com/download/linux" />
+    <meta property="og:image" content="https://ollama.com/public/og.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="628" />
+    <meta property="og:type" content="website" />
+
+    <meta name="robots" content="index, follow" />
+
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Download Ollama on Linux" />
+    <meta property="twitter:description" content="Download Ollama for Linux" />
+    <meta property="twitter:site" content="ollama" />
+
+    <meta property="twitter:image:src" content="https://ollama.com/public/og-twitter.png" />
+    <meta property="twitter:image:width" content="1200" />
+    <meta property="twitter:image:height" content="628" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/icon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/icon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/public/icon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/public/icon-64x64.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/public/android-chrome-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/public/android-chrome-icon-512x512.png" />
+
+    
+    
+
+    <link href="/public/tailwind.css?v=9f0babb28a8cef23daf033b8840da7f9" rel="stylesheet" />
+    <link href="/public/vendor/prism/prism.css?v=9f0babb28a8cef23daf033b8840da7f9" rel="stylesheet" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Ollama",
+        "url": "https://ollama.com"
+      }
+    </script>
+
+    <script type="text/javascript">
+      function copyToClipboard(element) {
+        let commandElement = null;
+        const preElement = element.closest('pre');
+        const languageNoneElement = element.closest('.language-none');
+
+        if (preElement) {
+          commandElement = preElement.querySelector('code');
+        } else if (languageNoneElement) {
+          commandElement = languageNoneElement.querySelector('.command');
+        } else {
+          const parent = element.parentElement;
+          if (parent) {
+            commandElement = parent.querySelector('.command');
+          }
+        }
+
+        if (!commandElement) {
+          console.error('No code or command element found');
+          return;
+        }
+
+        const code = commandElement.textContent ? commandElement.textContent.trim() : commandElement.value;
+
+        navigator.clipboard
+          .writeText(code)
+          .then(() => {
+            const copyIcon = element.querySelector('.copy-icon')
+            const checkIcon = element.querySelector('.check-icon')
+
+            copyIcon.classList.add('hidden')
+            checkIcon.classList.remove('hidden')
+
+            setTimeout(() => {
+              copyIcon.classList.remove('hidden')
+              checkIcon.classList.add('hidden')
+            }, 2000)
+          })
+      }
+    </script>
+    
+    <script>
+      
+      function getIcon(url) {
+        url = url.toLowerCase();
+        if (url.includes('x.com') || url.includes('twitter.com')) return 'x';
+        if (url.includes('github.com')) return 'github';
+        if (url.includes('linkedin.com')) return 'linkedin';
+        if (url.includes('youtube.com')) return 'youtube';
+        if (url.includes('hf.co') || url.includes('huggingface.co') || url.includes('huggingface.com')) return 'hugging-face';
+        return 'default';
+      }
+
+      function setInputIcon(input) {
+        const icon = getIcon(input.value);
+        const img = input.previousElementSibling.querySelector('img');
+        img.src = `/public/social/${icon}.svg`;
+        img.alt = `${icon} icon`;
+      }
+
+      function setDisplayIcon(imgElement, url) {
+        const icon = getIcon(url);
+        imgElement.src = `/public/social/${icon}.svg`;
+        imgElement.alt = `${icon} icon`;
+      }
+    </script>
+    
+    <script src="/public/vendor/htmx/bundle.js"></script>
+  </head>
+
+  <body
+    class="
+      antialiased
+      min-h-screen
+      w-full
+      m-0
+      flex
+      flex-col
+    "
+    hx-on:keydown="
+      if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') {
+        // Ignore key events in input fields.
+        return;
+      }
+      if ((event.metaKey && event.key === 'k') || event.key === '/') {
+        event.preventDefault();
+        const sp = htmx.find('#search') || htmx.find('#navbar-input');
+        sp.focus();
+      }
+    "
+  >
+      
+<header class="sticky top-0 z-40 bg-white underline-offset-4 lg:static">
+  <nav class="flex w-full items-center justify-between px-6 py-[9px]">
+    <a href="/" class="z-50">
+      <img src="/public/ollama.png" class="w-8" alt="Ollama" />
+    </a>
+    
+    
+    <div class="hidden lg:flex xl:flex-1 items-center space-x-6 ml-6 mr-6 xl:mr-0 text-lg">
+      <a class="hover:underline focus:underline focus:outline-none focus:ring-0" href="/search">Models</a>
+      <a class="hover:underline focus:underline focus:outline-none focus:ring-0" href="/docs">Docs</a>
+      <a class="hover:underline focus:underline focus:outline-none focus:ring-0" href="/pricing">Pricing</a>
+    </div>
+
+    
+    <div class="flex-grow justify-center items-center hidden lg:flex">
+      <div class="relative w-full xl:max-w-[28rem]">
+        
+<form action="/search" autocomplete="off">
+  <div 
+    class="relative flex w-full appearance-none bg-black/5 border border-neutral-100 items-center rounded-full"
+    hx-on:focusout="
+      if (!this.contains(event.relatedTarget)) {
+        const searchPreview = document.querySelector('#searchpreview');
+        if (searchPreview) {
+          htmx.addClass('#searchpreview', 'hidden');
+        }
+      }
+    "
+  >
+  <span id="searchIcon" class="pl-2 text-2xl text-neutral-500">
+    <svg class="mt-0.25 ml-1.5 h-5 w-5 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <path d="m8.5 3c3.0375661 0 5.5 2.46243388 5.5 5.5 0 1.24832096-.4158777 2.3995085-1.1166416 3.3225711l4.1469717 4.1470988c.2928932.2928932.2928932.767767 0 1.0606602-.2662666.2662665-.6829303.2904726-.9765418.0726181l-.0841184-.0726181-4.1470988-4.1469717c-.9230626.7007639-2.07425014 1.1166416-3.3225711 1.1166416-3.03756612 0-5.5-2.4624339-5.5-5.5 0-3.03756612 2.46243388-5.5 5.5-5.5zm0 1.5c-2.209139 0-4 1.790861-4 4s1.790861 4 4 4 4-1.790861 4-4-1.790861-4-4-4z" />
+    </svg>
+  </span>
+  <input
+    id="search"
+    hx-get="/search"
+    hx-trigger="keyup changed delay:100ms, focus"
+    hx-target="#searchpreview"
+    hx-swap="innerHTML"
+    name="q"
+    class="resize-none rounded-full border-0 py-2.5 bg-transparent text-sm w-full placeholder:text-neutral-500 focus:outline-none focus:ring-0"
+    placeholder="Search models"
+    autocomplete="off"
+    hx-on:keydown="
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        window.location.href = '/search?q=' + encodeURIComponent(this.value);
+        return;
+      }
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        this.value = '';
+        this.blur();
+        htmx.addClass('#searchpreview', 'hidden');
+        return;
+      }
+      if (event.key === 'Tab') { 
+        htmx.addClass('#searchpreview', 'hidden');
+        return;
+      }
+      if (event.key === 'ArrowDown') {
+        let first = document.querySelector('#search-preview-list a:first-of-type');
+        first?.focus();
+        event.preventDefault();
+      }
+      if (event.key === 'ArrowUp') {
+        let last = document.querySelector('#view-all-link');
+        last?.focus();
+        event.preventDefault();
+      }
+      htmx.removeClass('#searchpreview', 'hidden');
+    "
+    hx-on:focus="
+      htmx.removeClass('#searchpreview', 'hidden')
+    "
+  />
+</form>
+<div id="searchpreview" class="hidden absolute left-0 right-0 top-12 z-50" style="width: calc(100% + 2px); margin-left: -1px;"></div>
+</div>
+
+      </div>
+    </div>
+
+    
+    <div class="hidden lg:flex xl:flex-1 items-center space-x-2 justify-end ml-6 xl:ml-0">
+      
+        <a class="flex cursor-pointer items-center rounded-full bg-black/5 hover:bg-black/10 text-lg px-4 py-1.5 text-black whitespace-nowrap" href="/signin">Sign in</a>
+        <a class="flex cursor-pointer items-center rounded-full bg-neutral-800 text-lg px-4 py-1.5 text-white hover:bg-black whitespace-nowrap focus:bg-black" href="/download">Download</a>
+      
+    </div>
+    
+    
+    <div class="lg:hidden flex items-center">
+      <input type="checkbox" id="menu" class="peer hidden" />
+      <label for="menu" class="z-50 cursor-pointer peer-checked:hidden block">
+        <svg
+          class="h-8 w-8"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          />
+        </svg>
+      </label>
+      <label for="menu" class="z-50 cursor-pointer hidden peer-checked:block fixed top-4 right-6">
+        <svg
+          class="h-8 w-8"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </label>
+      
+      <div class="fixed inset-0 bg-white z-40 hidden peer-checked:block overflow-y-auto">
+        <div class="flex flex-col space-y-5 pt-[5.5rem] text-3xl">
+          
+
+          
+          <a class="px-6" href="/search">Models</a>
+          <a class="px-6" href="/download">Download</a>
+          <a class="px-6" href="/docs">Docs</a>
+          <a class="px-6" href="/pricing">Pricing</a>
+
+          
+          <a href="/signin" class="block px-6">Sign in</a>
+          
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+  <main class="mx-auto flex w-full max-w-6xl flex-col items-center px-6 py-10 md:py-24">
+    <h1 class="mb-12 text-3xl tracking-tight">Download Ollama</h1>
+    <nav class="grid grid-cols-3 gap-4 text-sm">
+      <a
+        href="/download/mac"
+        class="
+          flex cursor-pointer flex-col items-center rounded-lg px-6 py-2 hover:bg-neutral-100
+        "
+      >
+        <svg
+          fill="currentColor"
+          stroke-width="0"
+          viewBox="0 0 1024 1024"
+          class="h-8 w-8 p-1"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M747.4 535.7c-.4-68.2 30.5-119.6 92.9-157.5-34.9-50-87.7-77.5-157.3-82.8-65.9-5.2-138 38.4-164.4 38.4-27.9 0-91.7-36.6-141.9-36.6C273.1 298.8 163 379.8 163 544.6c0 48.7 8.9 99 26.7 150.8 23.8 68.2 109.6 235.3 199.1 232.6 46.8-1.1 79.9-33.2 140.8-33.2 59.1 0 89.7 33.2 141.9 33.2 90.3-1.3 167.9-153.2 190.5-221.6-121.1-57.1-114.6-167.2-114.6-170.7zm-105.1-305c50.7-60.2 46.1-115 44.6-134.7-44.8 2.6-96.6 30.5-126.1 64.8-32.5 36.8-51.6 82.3-47.5 133.6 48.4 3.7 92.6-21.2 129-63.7z"
+          ></path>
+        </svg>
+        macOS
+      </a>
+      <a
+        href="/download/linux"
+        class="
+          bg-neutral-100 flex cursor-pointer flex-col items-center rounded-lg px-6 py-2 hover:bg-neutral-100"
+      >
+        <svg
+          stroke="currentColor"
+          fill="currentColor"
+          stroke-width="0"
+          viewBox="0 0 448 512"
+          class="h-8 w-8 p-0.5"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M220.8 123.3c1 .5 1.8 1.7 3 1.7 1.1 0 2.8-.4 2.9-1.5.2-1.4-1.9-2.3-3.2-2.9-1.7-.7-3.9-1-5.5-.1-.4.2-.8.7-.6 1.1.3 1.3 2.3 1.1 3.4 1.7zm-21.9 1.7c1.2 0 2-1.2 3-1.7 1.1-.6 3.1-.4 3.5-1.6.2-.4-.2-.9-.6-1.1-1.6-.9-3.8-.6-5.5.1-1.3.6-3.4 1.5-3.2 2.9.1 1 1.8 1.5 2.8 1.4zM420 403.8c-3.6-4-5.3-11.6-7.2-19.7-1.8-8.1-3.9-16.8-10.5-22.4-1.3-1.1-2.6-2.1-4-2.9-1.3-.8-2.7-1.5-4.1-2 9.2-27.3 5.6-54.5-3.7-79.1-11.4-30.1-31.3-56.4-46.5-74.4-17.1-21.5-33.7-41.9-33.4-72C311.1 85.4 315.7.1 234.8 0 132.4-.2 158 103.4 156.9 135.2c-1.7 23.4-6.4 41.8-22.5 64.7-18.9 22.5-45.5 58.8-58.1 96.7-6 17.9-8.8 36.1-6.2 53.3-6.5 5.8-11.4 14.7-16.6 20.2-4.2 4.3-10.3 5.9-17 8.3s-14 6-18.5 14.5c-2.1 3.9-2.8 8.1-2.8 12.4 0 3.9.6 7.9 1.2 11.8 1.2 8.1 2.5 15.7.8 20.8-5.2 14.4-5.9 24.4-2.2 31.7 3.8 7.3 11.4 10.5 20.1 12.3 17.3 3.6 40.8 2.7 59.3 12.5 19.8 10.4 39.9 14.1 55.9 10.4 11.6-2.6 21.1-9.6 25.9-20.2 12.5-.1 26.3-5.4 48.3-6.6 14.9-1.2 33.6 5.3 55.1 4.1.6 2.3 1.4 4.6 2.5 6.7v.1c8.3 16.7 23.8 24.3 40.3 23 16.6-1.3 34.1-11 48.3-27.9 13.6-16.4 36-23.2 50.9-32.2 7.4-4.5 13.4-10.1 13.9-18.3.4-8.2-4.4-17.3-15.5-29.7zM223.7 87.3c9.8-22.2 34.2-21.8 44-.4 6.5 14.2 3.6 30.9-4.3 40.4-1.6-.8-5.9-2.6-12.6-4.9 1.1-1.2 3.1-2.7 3.9-4.6 4.8-11.8-.2-27-9.1-27.3-7.3-.5-13.9 10.8-11.8 23-4.1-2-9.4-3.5-13-4.4-1-6.9-.3-14.6 2.9-21.8zM183 75.8c10.1 0 20.8 14.2 19.1 33.5-3.5 1-7.1 2.5-10.2 4.6 1.2-8.9-3.3-20.1-9.6-19.6-8.4.7-9.8 21.2-1.8 28.1 1 .8 1.9-.2-5.9 5.5-15.6-14.6-10.5-52.1 8.4-52.1zm-13.6 60.7c6.2-4.6 13.6-10 14.1-10.5 4.7-4.4 13.5-14.2 27.9-14.2 7.1 0 15.6 2.3 25.9 8.9 6.3 4.1 11.3 4.4 22.6 9.3 8.4 3.5 13.7 9.7 10.5 18.2-2.6 7.1-11 14.4-22.7 18.1-11.1 3.6-19.8 16-38.2 14.9-3.9-.2-7-1-9.6-2.1-8-3.5-12.2-10.4-20-15-8.6-4.8-13.2-10.4-14.7-15.3-1.4-4.9 0-9 4.2-12.3zm3.3 334c-2.7 35.1-43.9 34.4-75.3 18-29.9-15.8-68.6-6.5-76.5-21.9-2.4-4.7-2.4-12.7 2.6-26.4v-.2c2.4-7.6.6-16-.6-23.9-1.2-7.8-1.8-15 .9-20 3.5-6.7 8.5-9.1 14.8-11.3 10.3-3.7 11.8-3.4 19.6-9.9 5.5-5.7 9.5-12.9 14.3-18 5.1-5.5 10-8.1 17.7-6.9 8.1 1.2 15.1 6.8 21.9 16l19.6 35.6c9.5 19.9 43.1 48.4 41 68.9zm-1.4-25.9c-4.1-6.6-9.6-13.6-14.4-19.6 7.1 0 14.2-2.2 16.7-8.9 2.3-6.2 0-14.9-7.4-24.9-13.5-18.2-38.3-32.5-38.3-32.5-13.5-8.4-21.1-18.7-24.6-29.9s-3-23.3-.3-35.2c5.2-22.9 18.6-45.2 27.2-59.2 2.3-1.7.8 3.2-8.7 20.8-8.5 16.1-24.4 53.3-2.6 82.4.6-20.7 5.5-41.8 13.8-61.5 12-27.4 37.3-74.9 39.3-112.7 1.1.8 4.6 3.2 6.2 4.1 4.6 2.7 8.1 6.7 12.6 10.3 12.4 10 28.5 9.2 42.4 1.2 6.2-3.5 11.2-7.5 15.9-9 9.9-3.1 17.8-8.6 22.3-15 7.7 30.4 25.7 74.3 37.2 95.7 6.1 11.4 18.3 35.5 23.6 64.6 3.3-.1 7 .4 10.9 1.4 13.8-35.7-11.7-74.2-23.3-84.9-4.7-4.6-4.9-6.6-2.6-6.5 12.6 11.2 29.2 33.7 35.2 59 2.8 11.6 3.3 23.7.4 35.7 16.4 6.8 35.9 17.9 30.7 34.8-2.2-.1-3.2 0-4.2 0 3.2-10.1-3.9-17.6-22.8-26.1-19.6-8.6-36-8.6-38.3 12.5-12.1 4.2-18.3 14.7-21.4 27.3-2.8 11.2-3.6 24.7-4.4 39.9-.5 7.7-3.6 18-6.8 29-32.1 22.9-76.7 32.9-114.3 7.2zm257.4-11.5c-.9 16.8-41.2 19.9-63.2 46.5-13.2 15.7-29.4 24.4-43.6 25.5s-26.5-4.8-33.7-19.3c-4.7-11.1-2.4-23.1 1.1-36.3 3.7-14.2 9.2-28.8 9.9-40.6.8-15.2 1.7-28.5 4.2-38.7 2.6-10.3 6.6-17.2 13.7-21.1.3-.2.7-.3 1-.5.8 13.2 7.3 26.6 18.8 29.5 12.6 3.3 30.7-7.5 38.4-16.3 9-.3 15.7-.9 22.6 5.1 9.9 8.5 7.1 30.3 17.1 41.6 10.6 11.6 14 19.5 13.7 24.6zM173.3 148.7c2 1.9 4.7 4.5 8 7.1 6.6 5.2 15.8 10.6 27.3 10.6 11.6 0 22.5-5.9 31.8-10.8 4.9-2.6 10.9-7 14.8-10.4s5.9-6.3 3.1-6.6-2.6 2.6-6 5.1c-4.4 3.2-9.7 7.4-13.9 9.8-7.4 4.2-19.5 10.2-29.9 10.2s-18.7-4.8-24.9-9.7c-3.1-2.5-5.7-5-7.7-6.9-1.5-1.4-1.9-4.6-4.3-4.9-1.4-.1-1.8 3.7 1.7 6.5z"
+          ></path>
+        </svg>
+        Linux
+      </a>
+      <a
+        href="/download/windows"
+        class="
+          flex cursor-pointer flex-col items-center rounded-lg px-6 py-2 hover:bg-neutral-100
+        "
+      >
+        <svg
+          fill="currentColor"
+          stroke-width="0"
+          viewBox="0 0 448 512"
+          class="b h-8 w-8 p-1"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"
+          ></path>
+        </svg>
+        Windows
+      </a>
+    </nav>
+    
+      
+  <div class="mx-auto mb-16 mt-12 flex w-full min-w-0 flex-col items-center text-center self-center">
+    <div class="min-w-0 max-w-full flex-1 self-center text-right">
+      <pre
+        class="language-none mb-2 flex flex-1 justify-center whitespace-nowrap rounded-lg bg-neutral-100 font-mono text-sm"
+      >
+        <code class="command flex-1 py-3 pl-4 pr-4 overflow-auto">curl -fsSL https://ollama.com/install.sh | sh</code>
+        <button
+          class="block py-1 px-3 leading-[0] w-12 text-neutral-500 hover:text-black focus:outline-none"
+          onclick="copyToClipboard(this)"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="copy-icon h-5 w-5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6"
+            />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="check-icon hidden h-5 w-5"
+            >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+          </svg>
+        </button>
+      </pre>
+      <div class="flex justify-center text-xs space-x-1 text-neutral-800 underline-offset-4">
+        <a
+          class="hover:underline focus:underline focus:outline-none focus:ring-0"
+          href="https://github.com/ollama/ollama/releases/latest/download/install.sh"
+          target="_blank"
+        >
+          View script source
+        </a>
+        â€¢
+        <a
+          class="hover:underline focus:underline focus:outline-none focus:ring-0"
+          href="https://docs.ollama.com/linux"
+          target="_blank"
+        >
+          Manual install instructions
+        </a>
+      </div>
+    </div>
+  </div>
+
+    
+  </main>
+
+
+    
+<footer class="mt-auto">
+
+  <div class="underline-offset-4 hidden md:block">
+    <div class="flex items-center justify-between px-6 py-3.5">
+      <div class="text-xs text-neutral-500">Â© 2026 Ollama</div>
+      <div class="flex space-x-6 text-xs text-neutral-500">
+        <a href="/download" class="hover:underline">Download</a>
+        <a href="/blog" class="hover:underline">Blog</a>
+        <a href="https://docs.ollama.com" class="hover:underline">Docs</a>
+        <a href="https://github.com/ollama/ollama" class="hover:underline">GitHub</a>
+        <a href="https://discord.com/invite/ollama" class="hover:underline">Discord</a>
+        <a href="https://twitter.com/ollama" class="hover:underline">X (Twitter)</a>
+        <a href="mailto:hello@ollama.com" class="hover:underline">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="py-4 md:hidden">
+    <div class="flex flex-col items-center justify-center">
+      <ul class="flex flex-wrap items-center justify-center text-sm text-neutral-500">
+        <li class="mx-2 my-1">
+          <a href="/blog" class="hover:underline">Blog</a>
+        </li>
+        <li class="mx-2 my-1">
+          <a href="/download" class="hover:underline">Download</a>
+        </li>
+        <li class="mx-2 my-1">
+          <a href="https://docs.ollama.com" class="hover:underline">Docs</a>
+        </li>
+      </ul>
+      <ul class="flex flex-wrap items-center justify-center text-sm text-neutral-500">
+        <li class="mx-2 my-1">
+          <a href="https://github.com/ollama/ollama" class="hover:underline">GitHub</a>
+        </li>
+        <li class="mx-2 my-1">
+          <a href="https://discord.com/invite/ollama" class="hover:underline">Discord</a>
+        </li>
+        <li class="mx-2 my-1">
+          <a href="https://twitter.com/ollama" class="hover:underline">X (Twitter)</a>
+        </li>
+        <li class="mx-2 my-1">
+          <a href="https://lu.ma/ollama" class="hover:underline">Meetups</a>
+        </li>
+      </ul>
+      <div class="mt-2 flex items-center justify-center text-sm text-neutral-500">
+        Â© 2026 Ollama Inc.
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+
+    
+    <span class="hidden" id="end_of_template"></span>
+  </body>
+</html>
+ZSÚ½“      iµ«iµ°IEKªiµ°   D    O^partitionKey=%28https%2Collama.com%29,:https://ollama.com/download necko:classified 1 peer-ip-address 34.36.133.15 peer-port 443 strongly-framed 1 security-info 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 request-method GET response-head HTTP/2 200 
+content-type: text/html; charset=utf-8
+x-build-commit: 7889e7d9ddb20341550ad5955a35221f278f4428
+x-build-time: 2026-03-13T22:50:21-07:00
+x-frame-options: DENY
+x-request-id: b69e15b4-cb33-4377-91cc-ee2187f71afb
+date: Sat, 14 Mar 2026 07:30:56 GMT
+server: Google Frontend
+x-cloud-trace-context: c80a4c421d2e106ea0c2782b0b2bb0f0/1735229560634504586
+traceparent: 00-c80a4c421d2e106ea0c2782b0b2bb0f0-1814c6177d60758a-00
+via: 1.1 google
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+X-Firefox-Spdy: h2
+ original-response-headers content-type: text/html; charset=utf-8
+set-cookie: aid=72b94888-e14a-42a3-85bf-0ca6c9e71c79; Path=/; Max-Age=31536000; HttpOnly; Secure; SameSite=Lax
+x-build-commit: 7889e7d9ddb20341550ad5955a35221f278f4428
+x-build-time: 2026-03-13T22:50:21-07:00
+x-frame-options: DENY
+x-request-id: b69e15b4-cb33-4377-91cc-ee2187f71afb
+date: Sat, 14 Mar 2026 07:30:56 GMT
+server: Google Frontend
+x-cloud-trace-context: c80a4c421d2e106ea0c2782b0b2bb0f0/1735229560634504586
+traceparent: 00-c80a4c421d2e106ea0c2782b0b2bb0f0-1814c6177d60758a-00
+via: 1.1 google
+alt-svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+X-Firefox-Spdy: h2
+ ctid 1 net-response-time-onstart 5323 net-response-time-onstop 5350   R

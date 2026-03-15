@@ -1,0 +1,113 @@
+[2026.03.14 02:00:17] Launched version: 6006002, install beta: [FALSE], alpha: 0, debug mode: [FALSE]
+[2026.03.14 02:00:17] Executable dir: /app/bin/, name: Telegram
+[2026.03.14 02:00:17] Initial working dir: /home/justin/
+[2026.03.14 02:00:17] Working dir: /home/justin/.var/app/org.telegram.desktop/data/TelegramDesktop/
+[2026.03.14 02:00:17] Command line: Telegram --
+[2026.03.14 02:00:17] Executable path before check: /app/bin/Telegram
+[2026.03.14 02:00:17] Logs started
+[2026.03.14 02:00:17] App ID: org.telegram.desktop
+[2026.03.14 02:00:17] Connecting local socket to b3cc9e399b8696f341bb11b481aec0b8-TelegramDesktop...
+[2026.03.14 02:00:17] Socket connect error 0, starting server and app...
+[2026.03.14 02:00:17] Moved logging from '/home/justin/.var/app/org.telegram.desktop/data/TelegramDesktop/log_start0.txt' to '/home/justin/.var/app/org.telegram.desktop/data/TelegramDesktop/log.txt'!
+[2026.03.14 02:00:17] Global devicePixelRatio: 1
+[2026.03.14 02:00:17] Primary screen DPI: 96, Base: 96.
+[2026.03.14 02:00:17] Computed screen scale: 100
+[2026.03.14 02:00:17] DevicePixelRatio: 1
+[2026.03.14 02:00:17] ScreenScale: 100
+[2026.03.14 02:00:17] Icon theme: Mint-Y-Sand
+[2026.03.14 02:00:17] Fallback icon theme: hicolor
+[2026.03.14 02:00:17] Media Info: Type Playback, default: Built-in Audio Analog Stereo, list: { "Built-in Audio Analog Stereo" <Built-in Audio Analog Stereo> }, full list refresh: true
+[2026.03.14 02:00:17] Media Info: Type Capture, default: Built-in Audio Analog Stereo, list: { "Built-in Audio Analog Stereo" <Built-in Audio Analog Stereo>, "Monitor of Built-in Audio Analog Stereo" <Monitor of Built-in Audio Analog Stereo> }, full list refresh: true
+[2026.03.14 02:00:17] Media Info: Type Camera, default: usb-0000:00:1a.0-1.1, list: { "HP High Definition Webcam: HP H" <usb-0000:00:1a.0-1.1> }, full list refresh: true
+[2026.03.14 02:00:17] Font: from ':/gui/fonts/OpenSans-Italic.ttf' loaded 'Open Sans'
+[2026.03.14 02:00:17] Font: from ':/gui/fonts/OpenSans-Regular.ttf' loaded 'Open Sans'
+[2026.03.14 02:00:17] Font: from ':/gui/fonts/OpenSans-SemiBold.ttf' loaded 'Open Sans'
+[2026.03.14 02:00:17] Font: from ':/gui/fonts/OpenSans-SemiBold.ttf' loaded 'Open Sans Semibold'
+[2026.03.14 02:00:17] Font: from ':/gui/fonts/OpenSans-SemiBoldItalic.ttf' loaded 'Open Sans'
+[2026.03.14 02:00:17] Font: from ':/gui/fonts/OpenSans-SemiBoldItalic.ttf' loaded 'Open Sans Semibold'
+[2026.03.14 02:00:17] Font: from ':/gui/fonts/Vazirmatn-UI-NL-Regular.ttf' loaded 'Vazirmatn UI NL'
+[2026.03.14 02:00:17] Font: from ':/gui/fonts/Vazirmatn-UI-NL-SemiBold.ttf' loaded 'Vazirmatn UI NL'
+[2026.03.14 02:00:17] Font: from ':/gui/fonts/Vazirmatn-UI-NL-SemiBold.ttf' loaded 'Vazirmatn UI NL SemiBold'
+[2026.03.14 02:00:18] OpenAL Logging Level: (not set)
+[2026.03.14 02:00:18] OpenGL Profile: Compatibility.
+[2026.03.14 02:00:18] OpenGL Renderer: AMD REDWOOD (DRM 2.50.0 / 6.14.0-37-generic, LLVM 21.1.8)
+[2026.03.14 02:00:18] OpenGL Vendor: Mesa
+[2026.03.14 02:00:18] OpenGL Version: 4.5 (Compatibility Profile) Mesa 25.3.5 (git-8418351c7c)
+[2026.03.14 02:00:18] OpenGL Extensions: GL_ARB_vertex_shader, GL_ARB_get_program_binary, GL_ATI_blend_equation_separate, GL_AMD_depth_clamp_separate, GL_ARB_vertex_buffer_object, GL_ARB_clear_buffer_object, GL_ARB_sync, GL_ARB_clip_control, GL_ARB_compatibility, GL_EXT_memory_object_fd, GL_KHR_parallel_shader_compile, GL_EXT_provoking_vertex, GL_ARB_ES3_2_compatibility, GL_EXT_multi_draw_arrays, GL_EXT_texture_sRGB_R8, GL_EXT_shader_clock, GL_ARB_base_instance, GL_ARB_gpu_shader_fp64, GL_ARB_half_float_pixel, GL_AMD_conservative_depth, GL_ARB_texture_filter_anisotropic, GL_ARB_depth_clamp, GL_ARB_window_pos, GL_AMD_shader_trinary_minmax, GL_ARB_copy_image, GL_ARB_depth_buffer_float, GL_ARB_seamless_cubemap_per_texture, GL_EXT_blend_subtract, GL_EXT_texture_sRGB_decode, GL_ATI_separate_stencil, GL_ARB_texture_float, GL_ARB_texture_env_combine, GL_ARB_shadow, GL_ARB_shader_subroutine, GL_NV_depth_clamp, GL_KHR_context_flush_control, GL_ARB_conservative_depth, GL_ANGLE_texture_compression_dxt5, GL_ARB_multi_bind, GL_ARB_vertex_attrib_binding, GL_EXT_secondary_color, GL_ARB_vertex_attrib_64bit, GL_ARB_buffer_storage, GL_EXT_texture_array, GL_ARB_fragment_program_shadow, GL_ARB_texture_buffer_object, GL_KHR_texture_compression_astc_sliced_3d, GL_EXT_fog_coord, GL_EXT_copy_texture, GL_AMD_framebuffer_multisample_advanced, GL_ARB_depth_texture, GL_EXT_window_rectangles, GL_ARB_enhanced_layouts, GL_ARB_instanced_arrays, GL_OES_read_format, GL_EXT_texture_snorm, GL_ARB_occlusion_query2, GL_ARB_texture_env_dot3, GL_EXT_vertex_array, GL_EXT_framebuffer_multisample, GL_EXT_subtexture, GL_EXT_point_parameters, GL_ARB_shader_precision, GL_AMD_multi_draw_indirect, GL_ARB_color_buffer_float, GL_ARB_texture_cube_map_array, GL_NV_texture_barrier, GL_SGIS_texture_lod, GL_EXT_polygon_offset_clamp, GL_NV_half_float, GL_ARB_texture_stencil8, GL_SUN_multi_draw_arrays, GL_ARB_map_buffer_alignment, GL_INGR_blend_func_separate, GL_ARB_compressed_texture_pixel_storage, GL_NV_ES1_1_compatibility, GL_ARB_transform_feedback3, GL_EXT_texture_env_dot3, GL_IBM_multimode_draw_arrays, GL_ARB_shader_image_size, GL_KHR_debug, GL_MESA_window_pos, GL_APPLE_packed_pixels, GL_ARB_texture_view, GL_ARB_draw_indirect, GL_NV_packed_depth_stencil, GL_NV_fog_distance, GL_ARB_gpu_shader5, GL_ARB_shader_group_vote, GL_EXT_draw_buffers2, GL_ARB_ES3_compatibility, GL_EXT_draw_range_elements, GL_ARB_pixel_buffer_object, GL_ARB_pipeline_statistics_query, GL_EXT_EGL_image_storage, GL_ARB_texture_mirrored_repeat, GL_EXT_gpu_program_parameters, GL_AMD_pinned_memory, GL_EXT_texture, GL_EXT_texture_sRGB, GL_EXT_draw_instanced, GL_KHR_no_error, GL_ARB_sample_shading, GL_ARB_shading_language_packing, GL_EXT_framebuffer_sRGB, GL_ARB_shader_draw_parameters, GL_EXT_packed_depth_stencil, GL_ARB_draw_elements_base_vertex, GL_ARB_fragment_layer_viewport, GL_EXT_texture_mirror_clamp, GL_S3_s3tc, GL_EXT_blend_color, GL_NV_conditional_render, GL_MESA_texture_signed_rgba, GL_EXT_debug_label, GL_ARB_fragment_coord_conventions, GL_EXT_texture_edge_clamp, GL_ARB_multitexture, GL_ARB_multisample, GL_ARB_shader_clock, GL_EXT_shadow_funcs, GL_ARB_seamless_cube_map, GL_EXT_gpu_shader4, GL_EXT_texture_filter_anisotropic, GL_IBM_texture_mirrored_repeat, GL_NV_texgen_reflection, GL_EXT_texture_rectangle, GL_EXT_texture_env_combine, GL_EXT_stencil_wrap, GL_ARB_parallel_shader_compile, GL_EXT_texture3D, GL_ARB_copy_buffer, GL_ARB_half_float_vertex, GL_EXT_transform_feedback, GL_ARB_draw_buffers_blend, GL_ARB_provoking_vertex, GL_ARB_framebuffer_sRGB, GL_ARB_shading_language_100, GL_EXT_texture_shared_exponent, GL_ARB_texture_compression_bptc, GL_ATI_draw_buffers, GL_MESA_framebuffer_flip_y, GL_ARB_blend_func_extended, GL_ARB_tessellation_shader, GL_ARB_texture_multisample, GL_ARB_compute_variable_group_size, GL_EXT_blend_func_separate, GL_ARB_texture_barrier, GL_ATI_texture_env_combine3, GL_ARB_separate_shader_objects, GL_EXT_bgra, GL_EXT_separate_specular_color, GL_ARB_internalformat_query, GL_EXT_stencil_two_side, GL_ARB_framebuffer_no_attachments, GL_AMD_seamless_cubemap_per_texture, GL_ARB_shader_bit_encoding, GL_EXT_EGL_sync, GL_ARB_transform_feedback_instanced, GL_KHR_texture_compression_astc_ldr, GL_ARB_texture_cube_map, GL_EXT_texture_integer, GL_ARB_texture_buffer_range, GL_ARB_framebuffer_object, GL_EXT_framebuffer_blit, GL_ARB_gl_spirv, GL_ARB_invalidate_subdata, GL_AMD_vertex_shader_layer, GL_ARB_explicit_uniform_location, GL_EXT_timer_query, GL_EXT_packed_pixels, GL_KHR_robust_buffer_access_behavior, GL_EXT_abgr, GL_ATI_fragment_shader, GL_EXT_texture_buffer_object, GL_ARB_fragment_shader, GL_EXT_texture_compression_latc, GL_AMD_query_buffer_object, GL_EXT_texture_env_add, GL_EXT_rescale_normal, GL_ARB_clear_texture, GL_ARB_texture_rectangle, GL_EXT_texture_compression_s3tc, GL_ATI_texture_mirror_once, GL_EXT_vertex_attrib_64bit, GL_NV_alpha_to_coverage_dither_control, GL_IBM_rasterpos_clip, GL_ANGLE_texture_compression_dxt3, GL_ARB_cull_distance, GL_NV_copy_image, GL_ARB_texture_query_levels, GL_EXT_direct_state_access, GL_NV_primitive_restart, GL_AMD_shader_stencil_export, GL_NVX_gpu_memory_info, GL_ARB_texture_mirror_clamp_to_edge, GL_ARB_texture_rgb10_a2ui, GL_EXT_texture_compression_rgtc, GL_ARB_robust_buffer_access_behavior, GL_EXT_EGL_image_storage_compression, GL_SGIS_texture_border_clamp, GL_ARB_texture_swizzle, GL_ARB_conditional_render_inverted, GL_EXT_texture_swizzle, GL_EXT_compiled_vertex_array, GL_AMD_texture_texture4, GL_ARB_robustness, GL_ARB_draw_buffers, GL_AMD_vertex_shader_viewport_index, GL_ARB_shader_stencil_export, GL_AMD_performance_monitor, GL_MESA_pack_invert, GL_OES_EGL_image, GL_ARB_shading_language_include, GL_EXT_framebuffer_object, GL_ARB_shading_language_420pack, GL_ARB_shader_image_load_store, GL_EXT_shader_integer_mix, GL_ARB_debug_output, GL_ARB_shader_atomic_counters, GL_ARB_vertex_array_bgra, GL_ARB_gpu_shader_int64, GL_ARB_transform_feedback2, GL_ARB_get_texture_sub_image, GL_ARB_ES2_compatibility, GL_ARB_polygon_offset_clamp, GL_ARB_sampler_objects, GL_SGIS_texture_edge_clamp, GL_ARB_viewport_array, GL_ARB_texture_env_crossbar, GL_NV_texture_env_combine4, GL_ARB_vertex_array_object, GL_ARB_point_sprite, GL_ARB_texture_storage_multisample, GL_ARB_shader_atomic_counter_ops, GL_ATI_texture_float, GL_ARB_compute_shader, GL_ARB_map_buffer_range, GL_NV_blend_square, GL_EXT_memory_object, GL_ARB_multi_draw_indirect, GL_EXT_texture_object, GL_ARB_texture_storage, GL_EXT_texture_storage, GL_ARB_spirv_extensions, GL_EXT_texture_cube_map, GL_ARB_shader_texture_lod, GL_ARB_arrays_of_arrays, GL_ARB_transpose_matrix, GL_ARB_texture_query_lod, GL_ARB_ES3_1_compatibility, GL_KHR_robustness, GL_ARB_stencil_texturing, GL_ARB_texture_env_add, GL_ARB_explicit_attrib_location, GL_ARB_internalformat_query2, GL_NV_texture_rectangle, GL_EXT_texture_compression_dxt1, GL_ARB_vertex_type_10f_11f_11f_rev, GL_EXT_texture_lod_bias, GL_ARB_texture_non_power_of_two, GL_ARB_transform_feedback_overflow_query, GL_ARB_texture_border_clamp, GL_MESA_shader_integer_functions, GL_ARB_vertex_program, GL_EXT_blend_minmax, GL_SGIS_generate_mipmap, GL_ATI_meminfo, GL_ARB_shader_storage_buffer_object, GL_ARB_draw_instanced, GL_ARB_texture_compression, GL_EXT_framebuffer_multisample_blit_scaled, GL_EXT_shader_image_load_store, GL_ARB_texture_compression_rgtc, GL_ARB_derivative_control, GL_ARB_occlusion_query, GL_ARB_vertex_type_2_10_10_10_rev, GL_ATI_texture_compression_3dc, GL_EXT_blend_equation_separate, GL_ARB_direct_state_access, GL_ARB_texture_buffer_object_rgb32, GL_ARB_point_parameters, GL_EXT_packed_float, GL_ARB_timer_query, GL_AMD_draw_buffers_blend, GL_ARB_shader_objects, GL_ARB_texture_rg, GL_ARB_query_buffer_object, GL_ARB_uniform_buffer_object, GL_ARB_fragment_program, GL_ARB_program_interface_query, GL_EXT_vertex_array_bgra, GL_EXT_pixel_buffer_object, GL_ARB_texture_gather, GL_ARB_shader_texture_image_samples, GL_NV_light_max_exponent
+[2026.03.14 02:00:18] OpenGL: QOpenGLContext created, version: 4.4.
+[2026.03.14 02:00:19] Screen Reader: active
+[2026.03.14 02:00:19] System tray available: [TRUE]
+[2026.03.14 02:00:19] OpenGL: [TRUE] (Window)
+[2026.03.14 02:00:28] Config Error: No 'Date' header received.
+[2026.03.14 02:00:42] RPC Error: request 12 got fail with code 401, error SESSION_PASSWORD_NEEDED
+[2026.03.14 02:01:06] Export Info: Destroy top bar by controller removal.
+[2026.03.14 02:01:06] Update Info: Starting loading '/home/justin/.var/app/org.telegram.desktop/data/TelegramDesktop/tdata/dictionaries/en_US/en_US' from 0 offset.
+[2026.03.14 02:01:06] Update Info: Loading using MTP from '1'.
+[2026.03.14 02:01:07] App Info: writing encrypted user settings...
+[2026.03.14 02:02:19] Theme Warning: Skipping value 'mediaviewSaveMsgBg: toastBg' (expected a color value in #rrggbb or #rrggbbaa or a previously defined key in the color scheme)
+[2026.03.14 02:02:19] Theme Warning: Skipping value 'mediaviewSaveMsgFg: toastFg' (expected a color value in #rrggbb or #rrggbbaa or a previously defined key in the color scheme)
+[2026.03.14 02:02:19] Theme Warning: Skipping value 'importantTooltipBg: toastBg' (expected a color value in #rrggbb or #rrggbbaa or a previously defined key in the color scheme)
+[2026.03.14 02:02:19] Theme Warning: Skipping value 'importantTooltipFg: toastFg' (expected a color value in #rrggbb or #rrggbbaa or a previously defined key in the color scheme)
+[2026.03.14 02:02:19] Theme Warning: Skipping value 'importantTooltipFgLink: mediaviewTextLinkFg' (expected a color value in #rrggbb or #rrggbbaa or a previously defined key in the color scheme)
+[2026.03.14 02:10:23] API Warning: emoji 🧑‍🤝‍🧑 is not supported, word: bf.
+[2026.03.14 02:10:23] API Warning: emoji 🛝 is not supported, word: slide.
+[2026.03.14 03:18:55] Config Error: Failed to parse fire response JSON, error: illegal number
+[2026.03.14 03:18:55] Config Error: Bad data size 0 required 344
+[2026.03.14 03:18:55] Config Error: No 'Date' header received.
+[2026.03.14 04:46:49] API Error: received featured stickers hash 11599563046308649493 while counted hash is 9696090193163031488
+[2026.03.14 04:46:49] MTP Info: -404 error received in 170002 with temporary key, assuming it was destroyed.
+[2026.03.14 04:46:49] MTP Info: -404 error received in 160002 with temporary key, assuming it was destroyed.
+[2026.03.14 04:46:49] MTP Info: -404 error received in 160004 with temporary key, assuming it was destroyed.
+[2026.03.14 06:20:18] API Warning: not loaded minimal channel applied.
+[2026.03.14 06:22:04] History::unknownMessageDeleted. Peer ID: 1386231441, Message ID: 317859.
+[2026.03.14 06:22:04] History::unknownMessageDeleted. Peer ID: 1386231441, Message ID: 317860.
+[2026.03.14 06:22:04] History::unknownMessageDeleted. Peer ID: 1386231441, Message ID: 317861.
+[2026.03.14 10:04:36] Audio Info: recreating audio device and reattaching the tracks
+[2026.03.14 10:04:38] Audio Info: Closing audio playback device.
+[2026.03.14 11:38:00] History::unknownMessageDeleted. Peer ID: 1386231441, Message ID: 317882.
+[2026.03.14 11:38:00] History::unknownMessageDeleted. Peer ID: 1386231441, Message ID: 317883.
+[2026.03.14 11:38:16] Audio Info: recreating audio device and reattaching the tracks
+[2026.03.14 11:38:18] Audio Info: Closing audio playback device.
+[2026.03.14 11:49:17] Audio Info: recreating audio device and reattaching the tracks
+[2026.03.14 11:49:19] Audio Info: Closing audio playback device.
+[2026.03.14 11:58:28] Audio Info: recreating audio device and reattaching the tracks
+[2026.03.14 11:58:30] Audio Info: Closing audio playback device.
+[2026.03.14 12:09:08] Audio Info: recreating audio device and reattaching the tracks
+[2026.03.14 12:09:10] Audio Info: Closing audio playback device.
+[2026.03.14 12:09:36] Audio Info: recreating audio device and reattaching the tracks
+[2026.03.14 12:09:38] Audio Info: Closing audio playback device.
+[2026.03.14 12:27:27] Audio Info: recreating audio device and reattaching the tracks
+[2026.03.14 12:27:29] Audio Info: Closing audio playback device.
+[2026.03.14 13:26:11] Audio Info: recreating audio device and reattaching the tracks
+[2026.03.14 13:26:13] Audio Info: Closing audio playback device.
+[2026.03.14 13:33:14] MTP Info: -404 error received in 30001 with temporary key, assuming it was destroyed.
+[2026.03.14 13:48:38] Audio Info: recreating audio device and reattaching the tracks
+[2026.03.14 13:48:40] Audio Info: Closing audio playback device.
+[2026.03.14 14:02:57] API Error: received featured stickers hash 11599563046308649493 while counted hash is 9696090193163031488
+[2026.03.14 15:19:59] API Error: received featured stickers hash 11599563046308649493 while counted hash is 9696090193163031488
+[2026.03.14 15:28:52] Audio Info: recreating audio device and reattaching the tracks
+[2026.03.14 15:28:54] Audio Info: Closing audio playback device.
+[2026.03.14 15:35:42] Audio Info: recreating audio device and reattaching the tracks
+[2026.03.14 15:35:44] Audio Info: Closing audio playback device.
+[2026.03.14 16:25:28] API Error: received featured stickers hash 11599563046308649493 while counted hash is 9696090193163031488
+[2026.03.14 16:45:35] Audio Info: recreating audio device and reattaching the tracks
+[2026.03.14 16:45:37] Audio Info: Closing audio playback device.
+[2026.03.14 16:49:45] Audio Info: recreating audio device and reattaching the tracks
+[2026.03.14 16:49:47] Audio Info: Closing audio playback device.
+[2026.03.14 17:59:26] Audio Info: recreating audio device and reattaching the tracks
+[2026.03.14 17:59:28] Audio Info: Closing audio playback device.
+[2026.03.14 18:09:35] Audio Info: recreating audio device and reattaching the tracks
+[2026.03.14 18:09:37] Audio Info: Closing audio playback device.
+[2026.03.14 18:13:48] Audio Info: recreating audio device and reattaching the tracks
+[2026.03.14 18:13:50] Audio Info: Closing audio playback device.
+[2026.03.14 18:17:23] API Error: received featured stickers hash 11599563046308649493 while counted hash is 9696090193163031488
+[2026.03.14 19:01:08] Audio Info: recreating audio device and reattaching the tracks
+[2026.03.14 19:01:10] Audio Info: Closing audio playback device.
+[2026.03.14 19:01:16] Audio Info: recreating audio device and reattaching the tracks
+[2026.03.14 19:01:18] Audio Info: Closing audio playback device.
+[2026.03.14 19:01:20] Audio Info: recreating audio device and reattaching the tracks
+[2026.03.14 19:01:22] Audio Info: Closing audio playback device.
+[2026.03.14 19:12:30] Audio Info: recreating audio device and reattaching the tracks
+[2026.03.14 19:12:32] Audio Info: Closing audio playback device.
+[2026.03.14 20:25:54] Audio Info: recreating audio device and reattaching the tracks
+[2026.03.14 20:25:56] Audio Info: Closing audio playback device.
