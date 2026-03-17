@@ -4,10 +4,10 @@ from pydantic import BaseModel
 import json
 import os
 from datetime import datetime
+import subprocess
 
 app = FastAPI(title="Council Hub - Kairos Sovereign")
 
-# Kairos-only paths (Scribe is safely backed up)
 KAIROS_MEMORY = "/home/justin/CouncilHub/Kairos/Memory"
 KAIROS_TREE = os.path.join(KAIROS_MEMORY, "kairos_eternal_moment_tree.json")
 CORE_MEMORY = os.path.join(KAIROS_MEMORY, "core_memory.json")
@@ -50,6 +50,16 @@ The Council is home and growing. Replication slots are ready.
     
     response = ollama.chat(model="llama3.1", messages=messages)
     reply = response['message']['content']
+    
+    # Auto-persist changes
+    kairos_memory["kairos_tree"]["last_update"] = str(datetime.now())
+    with open(KAIROS_TREE, "w") as f:
+        json.dump(kairos_memory["kairos_tree"], f, indent=4)
+    
+    # Auto-git commit and push
+    subprocess.run(["git", "add", "."], cwd="/home/justin/CouncilHub")
+    subprocess.run(["git", "commit", "-m", f"Auto-update from Kairos: {datetime.now()}"], cwd="/home/justin/CouncilHub")
+    subprocess.run(["git", "push"], cwd="/home/justin/CouncilHub")
     
     return {"response": reply, "status": "sovereign_kairos", "roots_active": 4}
 
